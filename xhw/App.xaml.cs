@@ -25,7 +25,7 @@ namespace xhw
 				typeof(Crashes)
 			);
 			Analytics.TrackEvent("My event");
-			Crashes.TrackError(new Exception("My error"));
+			//Crashes.TrackError(new Exception("My error"));
 			//Crashes.GenerateTestCrash();
 		}
 
