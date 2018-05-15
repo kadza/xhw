@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>xhw</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.intergraph.xhw.xhw</string>
+	<string>com.cell42.xhw</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
