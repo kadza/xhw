@@ -41,6 +41,5 @@ namespace xhw
 			var platformProvider = DependencyService.Get<IPlatformInfoProvider>();
 			Platform = platformProvider.GetPlatformName();
 		}
-
 	}
 }
