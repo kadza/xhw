@@ -5,38 +5,42 @@ using Xamarin.Forms;
 namespace xhw
 {
 	public class MainPageViewModel : INotifyPropertyChanged
-    {
+	{
 		public MainPageViewModel()
 		{
 			GetPlatform = new Command(GetPlatformImpl);
 		}
-       
+
 		string platform = "test";
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public string Platform
 		{
-			get {
+			get
+			{
 				return platform;
 			}
 
-			set {
+			set
+			{
 				platform = value;
 				OnPropertyChanged("Platform");
 			}
 		}
 
 		protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
 
 		public ICommand GetPlatform { get; }
-        
-		private void GetPlatformImpl(){
-			Platform = "test1";
+
+		void GetPlatformImpl()
+		{
+			var platformProvider = DependencyService.Get<IPlatformInfoProvider>();
+			Platform = platformProvider.GetPlatformName();
 		}
-        
+
 	}
 }
